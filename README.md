@@ -25,20 +25,6 @@ langsung di **AndroidIDE**, atau di-build otomatis jadi **APK jadi** lewat
 8. Extract, dapat file `app-debug.apk` → pindahkan ke HP → install
    (aktifkan "Izinkan dari sumber ini" kalau diminta).
 
-**Tidak perlu AndroidIDE, tidak perlu SDK, tidak perlu laptop.** GitHub
-yang build-kan APK-nya di server mereka, bos tinggal download hasil jadi.
-
-## Cara alternatif: Build manual di AndroidIDE (di HP)
-
-1. Extract file `JARVIS.zip` ini.
-2. Buka **AndroidIDE** → menu (☰) → **Open Project** → arahkan ke folder
-   `JARVIS` hasil extract (folder yang berisi `settings.gradle`).
-3. Tunggu **Sync Gradle** selesai (pertama kali bisa 10–20 menit).
-4. Menu → **Build → Build APK(s)** → tunggu proses build.
-5. Setelah sukses, ketuk **Install** pada notifikasi/tombol yang muncul.
-6. Buka aplikasi **JARVIS**, berikan semua izin yang diminta.
-7. Isi API key di ⚙️ **Settings API** (lihat Bagian 7 panduan asal:
-   pilih preset Groq/Gemini gratis → tempel API key → Simpan).
 
 ## Isi package
 
