@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Chip" parent="Widget.MaterialComponents.Chip.Action" />
-    <style name="Text.Jarvis" />
+    <style name="Text" parent="TextAppearance.MaterialComponents.Body1" />
+    <style name="Text.Jarvis" parent="Text" />
 </resources>
