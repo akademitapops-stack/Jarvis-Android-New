@@ -1,0 +1,80 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/bg</item>
+        <item name="colorAccent">@color/cyan</item>
+        <item name="colorSecondary">@color/cyan</item>
+        <item name="colorSurface">@color/panel</item>
+        <item name="colorOnSurface">@color/text_main</item>
+        <item name="android:textColorPrimary">@color/text_main</item>
+        <item name="android:textColorSecondary">@color/muted</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@color/bg</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="materialButtonStyle">@style/Widget.Jarvis.Button.Primary</item>
+    </style>
+
+    <!-- Primary filled button — mirrors html .btn (blue gradient-ish fill, 10dp radius) -->
+    <style name="Widget.Jarvis.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/blue</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="strokeColor">@color/blue_border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Secondary / outlined button — mirrors html .btn.secondary -->
+    <style name="Widget.Jarvis.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/text_main</item>
+        <item name="strokeColor">@color/line</item>
+        <item name="backgroundTint">@color/panel2</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Text / nav button — mirrors html .nav button -->
+    <style name="Widget.Jarvis.Button.Nav" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- Card panel — mirrors html .card -->
+    <style name="Widget.Jarvis.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/panel</item>
+        <item name="strokeColor">@color/line</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Text.Jarvis.SectionLabel">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textColor">@color/cyan</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.12</item>
+    </style>
+
+    <style name="Text.Jarvis.Muted">
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:textSize">10.5sp</item>
+    </style>
+
+    <!-- Suggestion chip — mirrors html .chip -->
+    <style name="Chip.Jarvis">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_chip</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:textSize">10.5sp</item>
+        <item name="android:paddingHorizontal">12dp</item>
+        <item name="android:paddingVertical">7dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+</resources>

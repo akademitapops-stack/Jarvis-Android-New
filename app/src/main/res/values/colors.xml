@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ============ J.A.R.V.I.S. Master UI palette (mirrors docs/design/jarvis-ui-master.html :root tokens) ============ -->
+    <color name="bg">#02070D</color>
+    <color name="bg_glow_1">#0C2C46</color>
+    <color name="bg_glow_2">#08202F</color>
+    <color name="panel">#0C1D2E</color>
+    <color name="panel2">#071219</color>
+    <color name="line">#173854</color>
+    <color name="line_soft">#0F2739</color>
+    <color name="text_main">#EAF7FF</color>
+    <color name="muted">#6F8BA1</color>
+    <color name="blue">#2499FF</color>
+    <color name="blue_dark">#0966B8</color>
+    <color name="blue_light">#1A95F0</color>
+    <color name="blue_border">#2779B5</color>
+    <color name="cyan">#6FE3FF</color>
+    <color name="green">#58DFAE</color>
+    <color name="amber">#FFB454</color>
+    <color name="red">#FF6B6B</color>
+
+    <color name="topbar_bg">#F0030C14</color>
+    <color name="input_bg">#04111C</color>
+    <color name="item_bg">#081726</color>
+    <color name="item_border">#173854</color>
+    <color name="chip_bg">#081826</color>
+    <color name="online_bg">#062219</color>
+    <color name="online_border">#1D614B</color>
+    <color name="bubble_bot_bg">#081B2C</color>
+    <color name="bubble_user_bg">#0A3154</color>
+    <color name="bubble_user_border">#236C9F</color>
+    <color name="nav_active_bg_top">#0D2338</color>
+    <color name="nav_active_bg_bottom">#0A1C2C</color>
+
+    <!-- ============ Legacy names kept so existing layouts cascade to the new palette automatically ============ -->
+    <color name="primary">#2499FF</color>
+    <color name="accent">#6FE3FF</color>
+    <color name="bg_dark">#02070D</color>
+    <color name="surface">#0C1D2E</color>
+    <color name="surface2">#173854</color>
+    <color name="white">#EAF7FF</color>
+    <color name="orange">#FFB454</color>
+    <color name="text_dim">#6F8BA1</color>
+    <color name="error">#FF6B6B</color>
+</resources>

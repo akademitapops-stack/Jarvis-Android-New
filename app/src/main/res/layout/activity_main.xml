@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="56dp"
+        android:background="@drawable/bg_topbar"
+        android:elevation="0dp"
+        app:titleTextColor="@color/text_main"
+        app:subtitleTextColor="@color/muted"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/topStatus"
+        android:layout_width="match_parent" android:layout_height="30dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingHorizontal="14dp"
+        android:background="@color/topbar_bg"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="● USER | loading..."
+            android:textColor="@color/green"
+            android:textSize="10sp" android:fontFamily="monospace"
+            android:maxLines="1" android:ellipsize="end" />
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="v2.9 · TITAN"
+            android:textColor="@color/muted"
+            android:textSize="9sp" android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- ============ CORE HEADER — Digital Earth HUD (mirrors .coreHeader) ============ -->
+    <FrameLayout
+        android:id="@+id/coreHeaderBox"
+        android:layout_width="0dp" android:layout_height="220dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_core_header"
+        app:layout_constraintTop_toBottomOf="@id/topStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.hermes.jarvis.ui.DigitalEarthView
+            android:id="@+id/digitalEarth"
+            android:layout_width="match_parent" android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="top|start" android:layout_margin="12dp"
+            android:text="J.A.R.V.I.S. CORE"
+            android:textColor="@color/cyan" android:textSize="8sp"
+            android:fontFamily="monospace" android:letterSpacing="0.12" />
+
+        <!-- HUD corner — MESSAGES -->
+        <LinearLayout
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="top|start" android:layout_margin="12dp"
+            android:layout_marginTop="26dp"
+            android:orientation="vertical" android:padding="7dp"
+            android:background="@drawable/bg_hud_corner" android:minWidth="72dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="MESSAGES" android:textColor="@color/muted" android:textSize="7sp"
+                android:fontFamily="monospace" android:letterSpacing="0.1" />
+            <TextView android:id="@+id/hudMsgVal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0" android:textColor="@color/text_main" android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- HUD corner — RESPONSES -->
+        <LinearLayout
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="top|end" android:layout_margin="12dp"
+            android:orientation="vertical" android:gravity="end" android:padding="7dp"
+            android:background="@drawable/bg_hud_corner" android:minWidth="72dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="RESPONSES" android:textColor="@color/muted" android:textSize="7sp"
+                android:fontFamily="monospace" android:letterSpacing="0.1" />
+            <TextView android:id="@+id/hudRespVal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0" android:textColor="@color/text_main" android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- HUD corner — SEARCHES -->
+        <LinearLayout
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start" android:layout_margin="12dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical" android:padding="7dp"
+            android:background="@drawable/bg_hud_corner" android:minWidth="72dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SEARCHES" android:textColor="@color/muted" android:textSize="7sp"
+                android:fontFamily="monospace" android:letterSpacing="0.1" />
+            <TextView android:id="@+id/hudSearchVal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0" android:textColor="@color/text_main" android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- HUD corner — ACCESS (root/user) -->
+        <LinearLayout
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end" android:layout_margin="12dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="vertical" android:gravity="end" android:padding="7dp"
+            android:background="@drawable/bg_hud_corner" android:minWidth="72dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ACCESS" android:textColor="@color/muted" android:textSize="7sp"
+                android:fontFamily="monospace" android:letterSpacing="0.1" />
+            <TextView android:id="@+id/hudAccessVal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="USER" android:textColor="@color/text_main" android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/coreState"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal" android:layout_margin="14dp"
+            android:text="EARTH NETWORK · IDLE"
+            android:textColor="@color/cyan" android:textSize="9.5sp"
+            android:fontFamily="monospace" android:letterSpacing="0.06"
+            android:background="@drawable/bg_state_pill"
+            android:paddingHorizontal="14dp" android:paddingVertical="7dp" />
+    </FrameLayout>
+
+    <!-- ============ Quick Actions row (mirrors html Home "Quick Actions" card) ============ -->
+    <HorizontalScrollView
+        android:layout_width="match_parent" android:layout_height="46dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/coreHeaderBox">
+        <LinearLayout
+            android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="10dp">
+            <com.google.android.material.button.MaterialButton android:id="@+id/quickVision"
+                style="@style/Widget.Jarvis.Button.Secondary"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:insetTop="0dp" android:insetBottom="0dp"
+                android:text="◎ Vision" android:textSize="10.5sp" android:layout_marginEnd="6dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/quickImage"
+                style="@style/Widget.Jarvis.Button.Secondary"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:insetTop="0dp" android:insetBottom="0dp"
+                android:text="✦ Studio" android:textSize="10.5sp" android:layout_marginEnd="6dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/quickWeb"
+                style="@style/Widget.Jarvis.Button.Secondary"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:insetTop="0dp" android:insetBottom="0dp"
+                android:text="◇ Web Tools" android:textSize="10.5sp" android:layout_marginEnd="6dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/quickDashboard"
+                style="@style/Widget.Jarvis.Button.Secondary"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:insetTop="0dp" android:insetBottom="0dp"
+                android:text="◫ Dashboard" android:textSize="10.5sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/homeSection"
+        android:layout_width="match_parent" android:layout_height="26dp"
+        android:text="CHAT  ·  UNIFIED J.A.R.V.I.S. CORE"
+        android:textColor="@color/cyan" android:textSize="9.5sp"
+        android:fontFamily="monospace" android:letterSpacing="0.08"
+        android:gravity="center_vertical" android:paddingHorizontal="16dp"
+        android:background="@color/topbar_bg"
+        app:layout_constraintTop_toBottomOf="@+id/quickDashboard" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChat"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:padding="10dp" android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/homeSection"
+        app:layout_constraintBottom_toTopOf="@id/suggestRow" />
+
+    <!-- ============ Suggestion chips (mirrors .suggest-row) ============ -->
+    <HorizontalScrollView
+        android:id="@+id/suggestRow"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/inputBar">
+        <LinearLayout
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingHorizontal="10dp" android:paddingVertical="6dp">
+            <TextView android:id="@+id/chip1" style="@style/Chip.Jarvis"
+                android:text="Cek dashboard sistem" />
+            <TextView android:id="@+id/chip2" style="@style/Chip.Jarvis"
+                android:text="Cari berita AI terbaru" />
+            <TextView android:id="@+id/chip3" style="@style/Chip.Jarvis"
+                android:text="Buatkan gambar konsep" />
+            <TextView android:id="@+id/chip4" style="@style/Chip.Jarvis"
+                android:text="Analisis foto kamera" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/inputBar"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="8dp" android:gravity="center_vertical"
+        android:background="@color/topbar_bg"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavScroll">
+        <ImageButton android:id="@+id/btnMic"
+            android:layout_width="44dp" android:layout_height="44dp"
+            android:src="@drawable/ic_mic" android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/cyan" android:contentDescription="Mic" />
+        <EditText android:id="@+id/etInput"
+            android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+            android:hint="Tulis pesan atau perintah…" android:textColorHint="@color/muted"
+            android:textColor="@color/text_main" android:fontFamily="monospace" android:textSize="13sp"
+            android:background="@drawable/bg_input" android:padding="12dp" android:maxLines="4"
+            android:inputType="textMultiLine|textNoSuggestions" android:imeOptions="actionSend" />
+        <ImageButton android:id="@+id/btnSend"
+            android:layout_width="44dp" android:layout_height="44dp"
+            android:src="@drawable/ic_send" android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/blue" android:contentDescription="Kirim" />
+    </LinearLayout>
+
+    <!-- ============ Bottom nav — 9 destinations, mirrors html .bottomnav 1:1 ============ -->
+    <HorizontalScrollView
+        android:id="@+id/bottomNavScroll"
+        android:layout_width="match_parent" android:layout_height="60dp"
+        android:scrollbars="none"
+        android:background="@drawable/bg_bottomnav"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:id="@+id/bottomNav"
+            android:layout_width="wrap_content" android:layout_height="match_parent"
+            android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="6dp">
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/navHome"
+                style="@style/Widget.Jarvis.Button.Nav" android:background="@drawable/bg_nav_active"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="⌂\nHome" android:textSize="8.5sp"
+                android:textColor="@color/text_main" android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navTools"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="◇\nTools" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navImage"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="✦\nStudio" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navVision"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="◎\nVision" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navSkills"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="✧\nSkills" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navSettings"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="⚙\nConfig" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navPersona"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="♢\nPersona" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navGithub"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="⌘\nGitHub" android:textSize="8.5sp"
+                android:layout_marginEnd="3dp" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/navLogs"
+                style="@style/Widget.Jarvis.Button.Nav"
+                android:layout_width="wrap_content" android:layout_height="48dp"
+                android:minWidth="60dp" android:text="≡\nLogs" android:textSize="8.5sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
